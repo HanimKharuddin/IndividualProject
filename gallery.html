@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(images/background\ image.jpg);
+            color: #333;
+        }
+        .navbar {
+            background-color: #7e0232;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a {
+            color: #f2f2f2;
+            text-decoration: none;
+            padding: 14px 20px;
+            margin: 0 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #FF6A89;
+            transform: scale(1.1);
+        }
+        .navbar a.active {
+            background-color: #FF6A89;
+        }
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
+        .header {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            height: auto;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            font-size: 35px;
+            margin: 0;
+        }
+        .header p {
+            font-size: 20px;
+            margin-top: 5px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 0;
+            padding-bottom: 75%; 
+        }
+        .gallery-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #7e0232;
+            color: white;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="biodata.html">BIODATA</a>
+        <a href="experience.html">EXPERIENCE</a>
+        <a href="education.html">EDUCATION</a>
+        <a href="family.html">FAMILY</a>
+        <a class="active" href="gallery.html">GALLERY</a>
+    </div>
+
+    <video class="background-video" autoplay muted loop>
+        <source src="video/( CGI 4k Stock Footage ) Dusk Sunset Clouds 5 - Time Lapse Seamless Loop.mp4" type="video/mp4">
+    </video>
+    <div class="background-overlay"></div>
+
+    <header class="header">
+        <h1>Snapshots of My Life</h1>
+        <br>
+        <p>Welcome to my treasure trove of memories!</p>
+        <p>Photo is a chapter of my story, capturing the emotions, people, and experiences that make life extraordinary.</p>
+    </header>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="images/self1.jpg" alt="Myself 1">
+        </div>
+        <div class="gallery-item">
+            <img src="images/self2.jpg" alt="Myself 2">
+        </div>
+        <div class="gallery-item">
+            <img src="images/self3.jpg" alt="Myself 3">
+        </div>
+        <div class="gallery-item">
+            <img src="images/self4.jpg" alt="Myself 4">
+        </div>
+        <div class="gallery-item">
+            <img src="images/self51.jpg" alt="Myself 5">
+        </div>
+        <div class="gallery-item">
+            <img src="images/self5.jpg" alt="Myself 6">
+        </div>
+        <div class="gallery-item">
+            <img src="images/self6.jpg" alt="Myself 7">
+        </div>
+        <div class="gallery-item">
+            <img src="images/self7.jpg" alt="Myself 8">
+        </div>
+        <div class="gallery-item">
+            <img src="images/self8.jpg" alt="Myself 9">
+        </div>
+        <div class="gallery-item">
+            <img src="images/self10.jpg" alt="Myself 10">
+        </div> 
+        <div class="gallery-item">
+            <img src="images/fam15.jpg" alt="FAM10">
+        </div>
+        <div class="gallery-item">
+            <img src="images/fam14.jpg" alt="FAM4">
+        </div>
+        <div class="gallery-item">
+            <img src="images/fam11.jpg" alt="FAM1">
+        </div>
+        <div class="gallery-item">
+            <img src="images/fam12.jpg" alt="FAM2">
+        </div>
+        <div class="gallery-item">
+            <img src="images/fam13.jpg" alt="FAM3">
+        </div>
+        
+        <div class="gallery-item">
+            <img src="images/kakak.jpg" alt="FAM5">
+        </div>
+        <div class="gallery-item">
+            <img src="images/angah.jpg" alt="FAM6">
+        </div>
+        <div class="gallery-item">
+            <img src="images/kakakangah.jpg" alt="FAM7">
+        </div>
+        <div class="gallery-item">
+            <img src="images/firman.jpg" alt="FAM8">
+        </div>
+        <div class="gallery-item">
+            <img src="images/jebat.jpg" alt="FAM9">
+        </div>
+       
+        <div class="gallery-item">
+            <img src="images/hs1.jpg" alt="HSF 1">
+        </div>
+        <div class="gallery-item">
+            <img src="images/hs2.jpg" alt="HSF 2">
+        </div>
+        <div class="gallery-item">
+            <img src="images/hs3.jpg" alt="HSF 3">
+        </div>    
+        <div class="gallery-item">
+            <img src="images/hs4.jpg" alt="HSF 4">
+        </div>
+        <div class="gallery-item">
+            <img src="images/hs5.jpg" alt="HSF 5">
+        </div>
+        <div class="gallery-item">
+            <img src="images/hs6.jpg" alt="HSF 6">
+        </div>
+        <div class="gallery-item">
+            <img src="images/hs7.jpg" alt="HS 7">
+        </div>
+        <div class="gallery-item">
+            <img src="images/hs10.jpg" alt="HS 8">
+        </div>
+        <div class="gallery-item">
+            <img src="images/hs8.jpg" alt="HS 9">
+        </div>
+        <div class="gallery-item">
+            <img src="images/hs9.jpg" alt="HS 10">
+        </div>
+        <div class="gallery-item">
+            <img src="images/uni1.jpg" alt="UNI 1">
+        </div>
+        <div class="gallery-item">
+            <img src="images/uni2.jpg" alt="UNI 2">
+        </div>
+        <div class="gallery-item">
+            <img src="images/uni3.jpg" alt="UNI 3">
+        </div>    
+        <div class="gallery-item">
+            <img src="images/uni4.jpg" alt="UNI 4">
+        </div>
+        <div class="gallery-item">
+            <img src="images/uni5.jpg" alt="UNI 5">
+        </div>
+    </div>
+
+    <footer>
+        <p>Designed by Ain Farisha Hanim &copy; 2024 All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

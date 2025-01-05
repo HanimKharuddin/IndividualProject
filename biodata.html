@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Comic Sans MS", sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: #7e0232;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: #f2f2f2;
+            text-decoration: none;
+            padding: 14px 20px;
+            margin: 0 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #FF6A89;
+            transform: scale(1.1);
+        }
+
+        .navbar a.active {
+            background-color: #FF6A89;
+        }
+
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .frame-container {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 10px auto;
+        }
+
+        button {
+            background-color: #7e0232;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #e1bcbc;
+        }
+
+        h2 {
+            text-align: center;
+            text-decoration: none;
+            color: #7e0232;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        footer {
+            background-color: #7e0232;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+
+        .mapswrapper {
+            background: #fff;
+            position: relative;
+        }
+
+        .mapswrapper iframe {
+            border: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .mapswrapper a {
+            color: rgba(0, 0, 0, 0);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 0;
+        }
+    </style>
+    <script>
+        let currentIndex = 0;
+
+        function showContent(index) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach((content, i) => {
+                content.classList.remove('active');
+                if (i === index) {
+                    content.classList.add('active');
+                }
+            });
+        }
+
+        function nextContent() {
+            const contents = document.querySelectorAll('.content');
+            if (currentIndex < contents.length - 1) {
+                currentIndex++;
+                showContent(currentIndex);
+            }
+        }
+
+        function prevContent() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                showContent(currentIndex);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showContent(currentIndex);
+        });
+    </script>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="biodata.html" class="active">BIODATA</a>
+        <a href="experience.html">EXPERIENCE</a>
+        <a href="education.html">EDUCATION</a>
+        <a href="family.html">FAMILY</a>
+        <a href="gallery.html">GALLERY</a>
+    </div>
+
+    <video class="background-video" autoplay muted loop>
+        <source src="video/( CGI 4k Stock Footage ) Dusk Sunset Clouds 5 - Time Lapse Seamless Loop.mp4" type="video/mp4">
+    </video>
+
+    <div class="frame-container">
+        <div class="content active">
+            <h2>About Me</h2>
+            <p>Welcome to a peek into my world!</p>
+            <p>Here, you’ll discover the journey that shaped who I am today.</p>
+            <p>Let’s explore the story behind the person you see!</p>
+            <button onclick="nextContent()">Next</button>
+        </div>
+
+        <div class="content">
+            <h2>The Heart of Me</h2>
+            <img src="images/biodata.jpg" alt="Hanim's Webpage" class="profile-pic">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>Ain Farisha Hanim Binti Kharuddin</td>
+                </tr>
+                <tr>
+                    <th>Age</th>
+                    <td>20<sup>th</sup></td>
+                </tr>
+                <tr>
+                    <th>Date of Birth</th>
+                    <td>9<sup>th</sup> October 2004</td>
+                </tr>
+                <tr>
+                    <th>Hobby</th>
+                    <td>Watching Dramas</td>
+                </tr>
+                <tr>
+                    <th>Favorite Color</th>
+                    <td>Pink</td>
+                </tr>
+                <tr>
+                    <th>Favorite Music</th>
+                    <td>Always - by Daniel Caeser</td>
+                </tr>
+            </table>
+            <button onclick="prevContent()">Back</button>
+            <button onclick="nextContent()">Next</button>
+        </div>
+
+        <div class="content">
+            <h2>My Favourites</h2>
+            <h3>Favourite Food</h3>
+            <img src="images/ciken chop" alt="Chicken Chop" style="width:150px; margin-top: 10px;">
+            <p>My favourite food is Chicken Chop. Its crispy exterior and juicy interior make it a perfect meal to enjoy at any time!</p>
+            <button onclick="nextContent()">Next</button>
+        </div>
+
+        <div class="content">
+            <h3>Favourite Drink</h3>
+            <img src="images/air mangga" alt="Mango Milkshake" style="width:150px; margin-top: 10px;">
+            <p>I absolutely love Mango Milkshake. Its rich and refreshing flavor is the best way to cool down on a hot day.</p>
+            <button onclick="prevContent()">Back</button>
+            <button onclick="nextContent()">Next</button>
+        </div>
+
+        <div class="content">
+            <h3>Favourite Pet</h3>
+            <img src="images/sani.jpg" alt="Cat" style="width:150px; margin-top: 10px;">
+            <p>Cats are my favourite pets. Their playful and affectionate nature makes them wonderful companions to have around.</p>
+            <button onclick="prevContent()">Back</button>
+            <button onclick="nextContent()">Next</button>
+        </div>
+
+        <div class="content">
+            <h2>Location</h2>
+            <div class="mapswrapper">
+                <iframe width="550" height="550" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=seremban%202&zoom=10&maptype=roadmap"></iframe>
+            </div>
+            <button onclick="prevContent()">Back</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Designed by Ain Farisha Hanim &copy; 2024 All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

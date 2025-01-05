@@ -1,0 +1,233 @@
+<html>
+<head>
+    <title>Education</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #000;
+        }
+        .navbar {
+            background-color: #7e0232;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a {
+            color: #f2f2f2;
+            text-decoration: none;
+            padding: 14px 20px;
+            margin: 0 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #FF6A89;
+            transform: scale(1.1);
+        }
+
+        .navbar a.active {
+            background-color: #FF6A89;
+        }
+
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .education-frame {
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            color: #7e0232;
+        }
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #7e0232;
+        }
+        .card-content {
+            padding: 15px;
+        }
+        .card-content h2 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            color: #7e0232;
+        }
+        .card-content p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .multimedia {
+            width: 100%;
+            height: 100px;
+            animation: slideIn 0.8s ease-in-out;
+            text-align: center;
+            line-height: 100px;
+            color: black;
+            font-size: 24px;
+        }
+        .animated-text {
+            display: inline-block;
+            font-size: 30px;
+            font-weight: bold;
+            color: #f2f2f2;
+            animation: typing 3s steps(22) infinite, blink 0.5s step-end infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid black;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        @keyframes blink {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: black;
+            }
+        }
+
+        footer {
+            background-color: #7e0232;
+            color: white;
+            text-align: center;
+            font-size: 0.9rem;
+            padding: 10px 0;
+            margin-top: auto;
+            position: relative;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="biodata.html">BIODATA</a>
+        <a href="experience.html">EXPERIENCE</a>
+        <a class="active" href="education.html" >EDUCATION</a>
+        <a href="family.html">FAMILY</a>
+        <a href="gallery.html">GALLERY</a>
+    </div>
+
+    <video class="background-video" autoplay muted loop>
+        <source src="video/( CGI 4k Stock Footage ) Dusk Sunset Clouds 5 - Time Lapse Seamless Loop.mp4" type="video/mp4">
+    </video>
+    <div class="background-overlay"></div>
+
+    <main>
+        <div class="education-frame">
+            <h1>My Education Journey</h1>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="images/tadika.jpg" alt="Kindergarten">
+                    <div class="card-content">
+                        <h2>Kindergarten</h2>
+                        <p>In kindergarten, I began my formal education, learning foundational skills in a fun and interactive environment.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/2b.jpg" alt="Primary School">
+                    <div class="card-content">
+                        <h2>Primary School</h2>
+                        <p>During primary school, I nurtured my love for reading and developed critical thinking skills through engaging activities.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/f55.jpg" alt="Secondary School">
+                    <div class="card-content">
+                        <h2>Secondary School</h2>
+                        <p>Secondary school was crucial for my personal growth, where I explored subjects and built lasting friendships through clubs and sports.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/dip.jpg" alt="University">
+                    <div class="card-content">
+                        <h2>University</h2>
+                        <p>University was transformative, allowing me to pursue my passion in Information Management and engage in meaningful research and extracurricular activities.</p>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+
+        <div class="multimedia">
+            <span class="animated-text">STAY TUNED FOR MORE UPDATES !</span>
+        </div>
+    </main>
+
+    <footer>
+        <p>Designed by Ain Farisha Hanim &copy; 2024 All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

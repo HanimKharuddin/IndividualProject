@@ -1,0 +1,235 @@
+<html lang="en">
+<head>
+    <title>Experience</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Comic Sans MS", sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+        .navbar {
+            background-color: #7e0232;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a {
+            color: #f2f2f2;
+            text-decoration: none;
+            padding: 14px 20px;
+            margin: 0 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #FF6A89;
+            transform: scale(1.1);
+        }
+        .navbar a.active {
+            background-color: #FF6A89;
+        }
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .frame-container {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
+        .content {
+            display: none;
+            margin-bottom: 30px;
+        }
+        .content.active {
+            display: block;
+        }
+        h1 {
+            color: #7e0232;
+            text-align: center;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            text-align: left;
+            text-decoration: underline;
+            margin-bottom: 20px;
+        }
+        h3 {
+            margin-top: 20px;
+            font-size: 1.4rem;
+        }
+        button {
+            background-color: #7e0232;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #e1bcbc;
+        }
+
+        .content img {
+            display: block;
+            margin: 10px auto;
+            width: 80%;
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        ul, ol {
+            text-align: justify;
+            margin: 0 20px;
+        }
+        ul.custom-markers {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul.custom-markers li {
+            position: relative;
+            padding-left: 25px; 
+        }
+        ul.custom-markers li::before {
+            content: "\2605"; 
+            color: black; 
+            font-size: 1.2em; 
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        footer {
+            background-color: #7e0232;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+    </style>
+    <script>
+        let currentIndex = 0;
+
+        function showContent(index) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach((content, i) => {
+                content.classList.remove('active');
+                if (i === index) {
+                    content.classList.add('active');
+                }
+            });
+        }
+
+        function nextContent() {
+            const contents = document.querySelectorAll('.content');
+            if (currentIndex < contents.length - 1) {
+                currentIndex++;
+                showContent(currentIndex);
+            }
+        }
+
+        function prevContent() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                showContent(currentIndex);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showContent(currentIndex);
+        });
+    </script>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="biodata.html">BIODATA</a>
+        <a href="experience.html" class="active">EXPERIENCE</a>
+        <a href="education.html">EDUCATION</a>
+        <a href="family.html">FAMILY</a>
+        <a href="gallery.html">GALLERY</a>
+    </div>
+
+    <video class="background-video" autoplay muted loop>
+        <source src="video/( CGI 4k Stock Footage ) Dusk Sunset Clouds 5 - Time Lapse Seamless Loop.mp4" type="video/mp4">
+    </video>
+
+    <div class="frame-container">
+        <h1>My Experiences</h1>
+
+        <div class="content active">
+            <h2>Travel To Penang</h2>
+            <img src="images/penang1.png" usemap="#image-map">
+            <map name="image-map">
+            <area target="_blank" alt="Penang" title="Penang" href="https://mypenang.gov.my/?lg=en" coords="1,1,1296,674" shape="rect">
+            </map>
+            <p style="text-align: center;">(click the map to learn more about Penang)</p>
+                <ul>
+                <li>Travel Highlights: We drove to Penang via the scenic Penang Bridge, taking about 5 hours from Seremban.</li>
+                <li>Food Experience: We explored Gurney Drive for street food and had the best cendol at Penang Road.</li>
+                <li>Sightseeing: We explored the vibrant murals in George Town and enjoyed the breathtaking view from Penang Hill.</li>
+                <li>Memorable Moments: We took a trishaw ride through George Town, which was both fun and insightful, learning about Penang’s history.</li>
+            </ul>
+            <button onclick="nextContent()">Next</button>
+        </div>
+
+        <div class="content">
+            <h2>Part Time Job</h2>
+            <img src="images/parttime.jpg" alt="Part Time Job">
+            <ol>
+                <li>Responsibilities: Handling transactions, ensuring accurate billing, and providing customer service.</li>
+                <li>Work Environment: Worked at a busy supermarket, which gave me exposure to a fast-paced environment.</li>
+                <li>Skills Gained: Learned time management, attention to detail, and effective interpersonal communication.</li>
+                <li>Challenges: Helped a customer find a lost wallet, teaching me empathy and quick thinking.</li>
+            </ol>
+            <button onclick="prevContent()">Back</button>
+            <button onclick="nextContent()">Next</button>
+        </div>
+
+        <div class="content">
+            <h2>Internship</h2>
+            <img src="images/intern.jpg" alt="intern">
+            <ul class="custom-markers">
+                <li>Roles: Creating content, managing organizational data, and updating social media platforms.</li>
+                <li>Skills: Proficiency in Canva, CapCut, and photography using DSLR cameras.</li>
+                <li>Memorable Experience: Photographing a high-profile event, boosting confidence and technical skills.</li>
+            </ul>
+            <button onclick="prevContent()">Back</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Designed by Ain Farisha Hanim &copy; 2024 All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
